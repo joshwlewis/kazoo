@@ -1,9 +1,15 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
 one:
-  classification: MyString
-  name: MyString
+  classification: goat
+  name: Cloudy
 
 two:
-  classification: MyString
-  name: MyString
+  classification: human
+  name: Astro
+
+three:
+  classification: icon
+  name: Chatty
+
+four:
+  classification: human
+  name: Einstein

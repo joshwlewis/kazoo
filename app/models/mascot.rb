@@ -1,0 +1,2 @@
+class Mascot < ApplicationRecord
+end

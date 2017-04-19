@@ -1,0 +1,27 @@
+<%= form_with(model: mascot, local: true) do |f| %>
+  <% if mascot.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(mascot.errors.count, "error") %> prohibited this mascot from being saved:</h2>
+
+      <ul>
+      <% mascot.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :classification %>
+    <%= f.text_field :classification %>
+  </div>
+
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

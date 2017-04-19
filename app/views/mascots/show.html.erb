@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Classification:</strong>
+  <%= @mascot.classification %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @mascot.name %>
+</p>
+
+<%= link_to 'Edit', edit_mascot_path(@mascot) %> |
+<%= link_to 'Back', mascots_path %>

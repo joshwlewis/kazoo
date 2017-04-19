@@ -1,6 +1,6 @@
-class CreateAnimals < ActiveRecord::Migration[5.0]
+class CreateMascots < ActiveRecord::Migration[5.1]
   def change
-    create_table :animals do |t|
+    create_table :mascots do |t|
       t.string :classification
       t.string :name
 

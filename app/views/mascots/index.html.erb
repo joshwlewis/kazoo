@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Mascots</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Classification</th>
+      <th>Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @mascots.each do |mascot| %>
+      <tr>
+        <td><%= mascot.classification %></td>
+        <td><%= mascot.name %></td>
+        <td><%= link_to 'Show', mascot %></td>
+        <td><%= link_to 'Edit', edit_mascot_path(mascot) %></td>
+        <td><%= link_to 'Destroy', mascot, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Mascot', new_mascot_path %>

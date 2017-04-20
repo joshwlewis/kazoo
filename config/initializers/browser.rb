@@ -8,6 +8,7 @@ if Rails.env.test?
       'chromium',
       'google-chrome-canary', 
       'google-chrome-unstable',
+      'google-chrome-beta',
       'google-chrome-stable',
       'google-chrome'
     ]
@@ -17,6 +18,8 @@ if Rails.env.test?
       "#{ENV['HOME']}/Applications/Chromium.app/Contents/MacOS/Chromium",
       '/Applications/Google Chrome Canary.app/Contents/MacOS/Google Chrome Canary',
       "#{ENV['HOME']}/Applications/Google Chrome Canary.app/Contents/MacOS/Google Chrome Canary",
+      '/Applications/Google Chrome Beta.app/Contents/MacOS/Google Chrome Beta',
+      "#{ENV['HOME']}/Applications/Google Chrome Beta.app/Contents/MacOS/Google Chrome Beta",
       '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',
       "#{ENV['HOME']}/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
     ]
@@ -33,7 +36,7 @@ if Rails.env.test?
     caps = Selenium::WebDriver::Remote::Capabilities.chrome(
       "chromeOptions" => {
         'binary' => ENV['CHROME_BIN'] || find_chrome,
-        'args' => ['headless', 'disable-gpu']
+        'args' => ['headless', 'disable-gpu', 'no-sandbox']
       }
     )
     driver = Capybara::Selenium::Driver.new(

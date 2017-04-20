@@ -21,11 +21,12 @@ if Rails.env.test?
       "#{ENV['HOME']}/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
     ]
 
-    potential_binaries.find do |bin|
-      `which #{bin}`.present?
-    end || potential_paths.find do |loc|
-      File.exists?(loc)
-    end
+    potential_binaries.map do |bin|
+      path = `which #{bin}`
+      path if path.present?
+    end.compact.concat(potential_paths.select do |path|
+      File.exists?(path)
+    end).first
   end
 
   Capybara.register_driver :headless_chrome do |app|

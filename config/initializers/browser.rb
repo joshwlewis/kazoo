@@ -1,16 +1,11 @@
 if Rails.env.test?
-  require "capybara"
-  require "selenium-webdriver"
-
   def find_chrome
     potential_binaries = [
       'chromium-browser',
       'chromium',
       'google-chrome-canary', 
       'google-chrome-unstable',
-      'google-chrome-beta',
-      'google-chrome-stable',
-      'google-chrome'
+      'google-chrome-beta'
     ]
 
     potential_paths = [
@@ -20,16 +15,14 @@ if Rails.env.test?
       "#{ENV['HOME']}/Applications/Google Chrome Canary.app/Contents/MacOS/Google Chrome Canary",
       '/Applications/Google Chrome Beta.app/Contents/MacOS/Google Chrome Beta',
       "#{ENV['HOME']}/Applications/Google Chrome Beta.app/Contents/MacOS/Google Chrome Beta",
-      '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',
-      "#{ENV['HOME']}/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
     ]
 
     potential_binaries.map do |bin|
-      path = `which #{bin}`
-      path if path.present?
-    end.compact.concat(potential_paths.select do |path|
-      File.exists?(path)
-    end).first
+      path = `which #{bin}`.strip
+      Pathname.new(path).realpath.to_s if path.present?
+    end.concat(potential_paths.select do |path|
+      Pathname.new(path).realpath.to_s if File.exists?(path)
+    end).compact.first
   end
 
   Capybara.register_driver :headless_chrome do |app|

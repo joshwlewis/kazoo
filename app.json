@@ -1,5 +1,8 @@
 {
   "name": "zoo",
+  "addons": [
+    "heroku-postgresql"
+  ],
   "environments": {
     "test": {
       "buildpacks": [

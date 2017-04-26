@@ -4,7 +4,7 @@
     "heroku-postgresql"
   ],
   "scripts": {
-    "test": "bin/rails test && bin/rails test:system"
+    "test": "bin/rails test && bin/rails test:system --backtrace"
   },
   "environments": {
     "test": {

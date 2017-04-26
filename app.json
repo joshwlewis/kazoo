@@ -9,7 +9,7 @@
   "environments": {
     "test": {
       "buildpacks": [
-        { "url": "https://github.com/heroku/heroku-buildpack-google-chrome" },
+        { "url": "https://github.com/heroku/heroku-buildpack-google-chrome#chrome-stable" },
         { "url": "https://github.com/joshwlewis/heroku-buildpack-chromedriver" },
         { "url": "heroku/ruby" }
       ]

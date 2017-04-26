@@ -5,7 +5,9 @@ if Rails.env.test?
       'chromium',
       'google-chrome-canary',
       'google-chrome-unstable',
-      'google-chrome-beta'
+      'google-chrome-beta',
+      'google-chrome-stable',
+      'google-chrome'
     ]
 
     potential_paths = [

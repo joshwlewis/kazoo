@@ -6,10 +6,10 @@
   "scripts": {
     "test": "bin/rails test && bin/rails test:system"
   },
+  "env": {
+    "GOOGLE_CHROME_CHANNEL": "dev"
+  },
   "environments": {
-    "env": {
-      "GOOGLE_CHROME_CHANNEL": "dev"
-    },
     "test": {
       "buildpacks": [
         { "url": "https://github.com/heroku/heroku-buildpack-google-chrome#stable-channel" },

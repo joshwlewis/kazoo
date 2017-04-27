@@ -8,9 +8,6 @@
   },
   "environments": {
     "test": {
-      "env": {
-        "GOOGLE_CHROME_CHANNEL": "beta"
-      },
       "buildpacks": [
         { "url": "https://github.com/heroku/heroku-buildpack-google-chrome#stable-channel" },
         { "url": "https://github.com/joshwlewis/heroku-buildpack-chromedriver" },

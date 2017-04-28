@@ -4,12 +4,12 @@
     "heroku-postgresql"
   ],
   "scripts": {
-    "test": "bin/rails test && bin/rails test:system"
+    "test": "bin/rails test && xvfb-run -a bin/rails test:system"
   },
   "environments": {
     "test": {
       "buildpacks": [
-        { "url": "https://github.com/heroku/heroku-buildpack-google-chrome" },
+        { "url": "https://github.com/heroku/heroku-buildpack-xvfb-google-chrome" },
         { "url": "https://github.com/joshwlewis/heroku-buildpack-chromedriver" },
         { "url": "heroku/ruby" }
       ]

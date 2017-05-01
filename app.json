@@ -7,6 +7,11 @@
     "test": "bin/rails test && bin/rails test:system"
   },
   "environments": {
+    "formation": {
+      "test": {
+        "size": "performance-l"
+      }
+    },
     "test": {
       "buildpacks": [
         { "url": "https://github.com/heroku/heroku-buildpack-xvfb-google-chrome#startup" },

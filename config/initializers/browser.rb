@@ -29,10 +29,27 @@ if Rails.env.test?
 
   Capybara.register_driver :headless_chrome do |app|
     path = ENV['CHROME_BIN'] || find_chrome_bin
-    puts "Using Google Chrome at #{path}"
+    puts "Registering (headless) Google Chrome from #{path}."
     caps = Selenium::WebDriver::Remote::Capabilities.chrome(
       'chromeOptions' => {
         'args' => ['headless', 'disable-gpu', 'no-sandbox'],
+        'binary' => path
+      }
+    )
+
+    Capybara::Selenium::Driver.new(
+      app,
+      browser: :chrome,
+      desired_capabilities: caps
+    )
+  end
+
+  Capybara.register_driver :xvfb_chrome do |app|
+    path = ENV['CHROME_BIN'] || find_chrome_bin
+    puts "Registering (Xvfb) Google Chrome from #{path}."
+    caps = Selenium::WebDriver::Remote::Capabilities.chrome(
+      'chromeOptions' => {
+        'args' => ['disable-gpu', 'no-sandbox'],
         'binary' => path
       }
     )

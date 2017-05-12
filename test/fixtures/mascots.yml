@@ -13,3 +13,15 @@ three:
 four:
   classification: human
   name: Einstein
+  
+five:
+  classification: human-cat
+  name: Appy
+  
+six:
+  classification: bear
+  name: Codey
+
+seven:
+  classification: icon
+  name: Saasy

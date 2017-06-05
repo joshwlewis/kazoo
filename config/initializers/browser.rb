@@ -3,7 +3,7 @@ if Rails.env.test?
     caps = Selenium::WebDriver::Remote::Capabilities.chrome(
       'chromeOptions' => {
         'args' => ['headless', 'disable-gpu', 'no-sandbox'],
-        'binary' => ENV['GOOGLE_CHROME_BIN']
+        'binary' => ENV['GOOGLE_CHROME_SHIM']
       }.reject { |k, v| v.nil? }
     )
 

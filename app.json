@@ -6,6 +6,7 @@
   "scripts": {
     "test": "bin/rails test && bin/rails test:system"
   },
+  "stack": "cedar-14",
   "environments": {
     "test": {
       "buildpacks": [

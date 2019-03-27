@@ -6,11 +6,11 @@
   "scripts": {
     "test": "bin/rails test && bin/rails test:system"
   },
-  "stack": "cedar-14",
+  "stack": "heroku-18",
   "environments": {
     "test": {
       "buildpacks": [
-        { "url": "https://github.com/heroku/heroku-buildpack-xvfb-google-chrome" },
+        { "url": "https://github.com/heroku/heroku-buildpack-google-chrome" },
         { "url": "https://github.com/heroku/heroku-buildpack-chromedriver" },
         { "url": "heroku/ruby" }
       ]

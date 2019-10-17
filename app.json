@@ -1,8 +1,5 @@
 {
   "name": "zoo",
-  "addons": [
-    "heroku-postgresql"
-  ],
   "scripts": {
     "test": "bin/rails test && bin/rails test:system"
   },
@@ -10,6 +7,7 @@
   "environments": {
     "test": {
       "buildpacks": [
+        { "url": "https://github.com/heroku/heroku-buildpack-ci-postgresql#dont-stop-when-stopped" },
         { "url": "https://github.com/heroku/heroku-buildpack-google-chrome" },
         { "url": "https://github.com/heroku/heroku-buildpack-chromedriver" },
         { "url": "heroku/ruby" }
